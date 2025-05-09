@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+  font-family: 'AgeoTrial';
+  src: url('/fonts/AgeoTrial-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-montserrat text-neutral-800 leading-relaxed antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-montserrat leading-tight text-neutral-900 font-bold;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl;
+  }
+
+  h5 {
+    @apply text-lg md:text-xl;
+  }
+
+  h6 {
+    @apply text-base md:text-lg;
+  }
+
+  p {
+    @apply mb-4;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-md font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary-500 text-white hover:bg-primary-600 focus:ring-primary-500;
+  }
+
+  .btn-secondary {
+    @apply btn bg-secondary-400 text-white hover:bg-secondary-500 focus:ring-secondary-400;
+  }
+
+  .btn-outline {
+    @apply btn bg-transparent border-2 border-current text-primary-500 hover:bg-primary-50;
+  }
+
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+
+  .section {
+    @apply py-12 md:py-20;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6 transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply card hover:shadow-lg hover:-translate-y-1;
+  }
+}
+
+/* Optional fix for spacing between children */
+.custom-gap > * {
+  margin-right: -0.5rem;
+}
