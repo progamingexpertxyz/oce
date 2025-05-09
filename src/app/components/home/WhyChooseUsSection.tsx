@@ -31,16 +31,15 @@ const WhyChooseUsSection: React.FC = () => {
   return (
     <section className="py-12 bg-primary-500 text-white">
      <div className="container-custom "> {/* Adds top and bottom margin */}
-  <SectionTitle 
-    title="Your Partner in Ethical Learning"
-    subtitle={
-      <div className=' mt-2.5'>
-        We're committed to helping you achieve academic success <br />
-        while maintaining the highest ethical standards.
-      </div>
-    }
-    className="text-white -mb-0" 
-  />
+   <div className="w-full text-center py-12 px-4 sm:px-6 lg:px-8 text-white">
+  <h2 className="text-2xl sm:text-3xl lg:text-4xl text-white font-bold leading-tight">
+    Your Partner in Ethical Learning
+  </h2>
+  <p className="mt-4 text-base sm:text-lg lg:text-xl text-white max-w-2xl mx-auto leading-relaxed">
+    We're committed to helping you achieve academic success <br className="hidden sm:inline" />
+    while maintaining the highest ethical standards.
+  </p>
+</div>
 
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 -mt-5">
