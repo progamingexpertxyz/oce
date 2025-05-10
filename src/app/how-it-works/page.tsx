@@ -5,13 +5,14 @@ import Head from 'next/head';
 import { motion } from 'framer-motion';
 import SectionTitle from '@/app/components/ui/SectionTitle';
 import Button from '@/app/components/ui/Button';
+import NursingDiscountForm from '../components/home/form';
 
 const HowItWorksPage: React.FC = () => {
-    React.useEffect(() => {
-      document.title = 'How Our Services Work | Online Course Experts';
-      window.scrollTo(0, 0);
-    }, []);
-  
+  React.useEffect(() => {
+    document.title = 'How Our Services Work | Online Course Experts';
+    window.scrollTo(0, 0);
+  }, []);
+
 
   const steps = [
     {
@@ -27,7 +28,13 @@ const HowItWorksPage: React.FC = () => {
     {
       number: 3,
       title: 'Confirm Details',
-      description: 'We\'ll confirm availability and discuss applicable session or proofreading rates. Complete secure payment once details are agreed upon.',
+      description: (
+        <>
+          We'll confirm availability and discuss applicable session or proofreading rates.
+          <br />
+          Complete secure payment once details are agreed upon.
+        </>
+      ),
     },
     {
       number: 4,
@@ -48,18 +55,31 @@ const HowItWorksPage: React.FC = () => {
       </Head>
 
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.3 }}>
-        {/* Hero Section */}
-        <section className="py-20 md:py-28 bg-gradient-to-br from-primary-50 via-white to-secondary-50">
-          <div className="container-custom text-center max-w-3xl mx-auto">
-            <h1 className="mb-6">Getting Started with Online Course Experts is Easy</h1>
-            <p className="text-lg text-neutral-700">
-              Accessing expert academic support is simple. Follow these steps to connect with our services and start your journey toward academic success.
-            </p>
+        <section className="h-[40vh] mt-12 w-full bg-gradient-to-br from-primary-50 via-white to-secondary-50">
+          <div className="container-custom h-full mt-8  flex flex-col-reverse md:flex-row items-center justify-between gap-6">
+            {/* Text Left Side */}
+            <div className="w-full md:w-1/2 text-left ml-4">
+              <h1 className="text-3xl md:text-4xl font-bold text-neutral-800 mb-1">
+                How Our Services Work
+              </h1>
+              <p className="text-base md:text-lg text-neutral-600 leading-[1.4]">
+                Discover a simple and effective process to access <br /> academic support tailored to your needs.
+              </p>
+            </div>
+
+            {/* Image Right Side */}
+            <div className="w-full md:w-1/2 flex justify-center">
+              <img
+                src="/steps.png"
+                alt="How it works"
+                className="w-[60%] max-w-sm md:max-w-md -mt-18 object-contain"
+              />
+            </div>
           </div>
         </section>
 
         {/* Process Steps */}
-        <section className="section">
+        <section className="py-4">
           <div className="container-custom max-w-4xl mx-auto">
             <ol className="relative border-l border-primary-200">
               {steps.map((step, index) => (
@@ -75,7 +95,7 @@ const HowItWorksPage: React.FC = () => {
                     <span className="text-xl font-bold text-primary-800">{step.number}</span>
                   </span>
                   <h3 className="text-2xl font-bold mb-2">{step.title}</h3>
-                  <p className="text-lg text-neutral-600 mb-6">{step.description}</p>
+                  <p className="text-base text-neutral-600 mb-6">{step.description}</p>
 
                   {/* Conditionally Rendered Content */}
                   {step.number === 1 && (
@@ -85,7 +105,7 @@ const HowItWorksPage: React.FC = () => {
                         ['Academic Support', 'For developing study strategies, time management, research skills, and academic planning.'],
                         ['Proofreading', 'For grammar, formatting, and citation corrections to polish your existing work.'],
                       ].map(([title, desc], idx) => (
-                        <div key={idx} className="bg-white p-4 rounded-lg shadow-sm border border-neutral-100">
+                        <div key={idx} className="bg-white p-4 rounded-lg shadow-sm border border-neutral-400">
                           <h4 className="font-bold text-primary-500 mb-2">{title}</h4>
                           <p className="text-sm">{desc}</p>
                         </div>
@@ -94,7 +114,7 @@ const HowItWorksPage: React.FC = () => {
                   )}
 
                   {step.number === 2 && (
-                    <div className="bg-white p-6 rounded-lg shadow-sm border border-neutral-100">
+                    <div className="bg-white p-6 rounded-lg shadow-sm border border-neutral-300">
                       <p className="mb-4">For tutoring and academic support, our scheduling system allows you to:</p>
                       <ul className="list-disc list-inside mb-4 space-y-2 text-neutral-600">
                         <li>Select your preferred service</li>
@@ -114,7 +134,7 @@ const HowItWorksPage: React.FC = () => {
                   )}
 
                   {step.number === 4 && (
-                    <div className="bg-white p-6 rounded-lg shadow-sm border border-neutral-100">
+                    <div className="bg-white p-6 rounded-lg shadow-sm border border-neutral-300">
                       <p className="mb-4">For online sessions:</p>
                       <ul className="list-disc list-inside mb-4 space-y-2 text-neutral-600">
                         <li>Secure meeting link will be provided</li>
@@ -129,55 +149,69 @@ const HowItWorksPage: React.FC = () => {
             </ol>
           </div>
         </section>
+{/* Preparation Section */}
+<section className="section ml-24 bg-neutral-50">
+  <div className="container-custom  grid grid-cols-1 lg:grid-cols-2 gap-12 justify-center items-center">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+    >
+      
+      <h2 className="text-2xl font-bold mb-6">Preparing for Your Session</h2>
+      <ul className="list-disc list-inside space-y-2 text-neutral-600">
+        <li>Have specific questions or topics prepared</li>
+        <li>Share relevant course materials in advance</li>
+        <li>Quiet space with reliable internet</li>
+        <li>Engage actively during the session</li>
+        <li>Have all necessary materials (textbooks, notes, etc.)</li>
+      </ul>
+      <p className="mt-4 text-neutral-600">
+        These steps ensure you get the most from your session.
+      </p>
+    </motion.div>
 
-        {/* Preparation Section */}
-        <section className="section bg-neutral-50">
-          <div className="container-custom grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            >
-              <h2 className="text-2xl font-bold mb-6">Preparing for Your Session</h2>
-              <ul className="list-disc list-inside mb-6 space-y-2 text-neutral-600">
-                <li>Have specific questions or topics prepared</li>
-                <li>Share relevant course materials in advance</li>
-                <li>Quiet space with reliable internet</li>
-                <li>Engage actively during the session</li>
-                <li>Have all necessary materials (textbooks, notes, etc.)</li>
-              </ul>
-            </motion.div>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: 0.2 }}
+    >
+      <h2 className="text-2xl font-bold mb-6">Technical Requirements</h2>
+      <ul className="list-disc list-inside space-y-2 text-neutral-600">
+        <li>Reliable internet connection</li>
+        <li>Device with camera (preferred)</li>
+        <li>Headphones with microphone</li>
+        <li>Modern browser (Chrome, Firefox, Safari, Edge)</li>
+        <li>Basic video conferencing familiarity</li>
+      </ul>
+      <p className="mt-4 text-neutral-600">
+        We’ll assist you with any technical issues before your session begins.
+      </p>
+    </motion.div>
+  </div>
+</section>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <h2 className="text-2xl font-bold mb-6">Technical Requirements</h2>
-              <ul className="list-disc list-inside mb-6 space-y-2 text-neutral-600">
-                <li>Reliable internet connection</li>
-                <li>Device with camera (preferred)</li>
-                <li>Headphones with microphone</li>
-                <li>Modern browser (Chrome, Firefox, Safari, Edge)</li>
-                <li>Basic video conferencing familiarity</li>
-              </ul>
-              <p>We’ll assist you with any technical issues before your session begins.</p>
-            </motion.div>
-          </div>
-        </section>
 
-        {/* Contact Section */}
-        <section className="section">
-          <div className="container-custom text-center max-w-3xl mx-auto">
-            <SectionTitle
-              title="Questions About the Process or Rates?"
-              subtitle="We're here to help! Contact us for any clarification about our services, process, or pricing."
-            />
-            <Button link="/contact-us" variant="primary">
-              Contact Us
-            </Button>
+        {/* Final Section */}
+        <section className="relative py-4 text-white overflow-hidden">
+          <div
+            className="absolute inset-0 z-0 bg-fixed bg-cover bg-center"
+            style={{ backgroundImage: "url('/bg.jpg')", opacity: 0.35 }}
+          ></div>
+          <div className="absolute inset-0 bg-gradient-to-tr from-pink-600 to-blue-100 opacity-30 z-0"></div>
+          <div className="relative z-10 container-custom mx-auto px-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div className="md:w-1/2 mt-6 md:mt-0 md:ml-32">
+              <h2 className="text-4xl font-semibold mb-3 text-black">
+                Questions About the
+                Process <br /> or Rates?
+              </h2>
+              <p className="text-xl text-black/90 leading-snug">
+                We're here to help! Contact us for any clarification about <br /> our services, process, or pricing.
+              </p>
+            </div>
+            <NursingDiscountForm />
           </div>
         </section>
       </motion.div>

@@ -4,7 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import SectionTitle from '../components/ui/SectionTitle';
 import Button from '../components/ui/Button';
-import { CheckCircle, ArrowRight } from 'lucide-react';
+import { CheckCircle } from 'lucide-react';
 
 const NursingTutoringPage: React.FC = () => {
   React.useEffect(() => {
@@ -61,20 +61,24 @@ const NursingTutoringPage: React.FC = () => {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="py-20 md:py-28 bg-gradient-to-br from-primary-50 via-white to-secondary-50">
-        <div className="container-custom">
-          <div className="max-w-3xl mx-auto">
-            <h1 className="mb-4 text-center">Master Your Nursing Subjects with Expert Tutoring</h1>
-            <p className="text-xl md:text-2xl mb-6 text-neutral-700 text-center">
-              Personalized Online Tutoring to Help You Understand Complex Nursing Concepts, from Pharmacology to Pathophysiology and Beyond.
-            </p>
-            <p className="text-neutral-600 mb-8">
-              Feeling overwhelmed by the depth of information in your nursing courses? Struggling to connect the dots between lectures, readings, and clinical application? Online Course Experts offers specialized Nursing Subject Tutoring designed to provide clarity and deepen your understanding of core nursing concepts. Our experienced tutors work with you one-on-one online to ensure you build a strong, confident foundation in your coursework.
-            </p>
-          </div>
-        </div>
-      </section>
+{/* Hero Section */}
+<section className="py-20 md:py-28 w-full h-[70vh] bg-gradient-to-br from-primary-50 via-white to-secondary-50">
+  <div className="container-custom">
+    <div className="max-w-3xl ml-5">
+      <h1 className="mb-4 text-5xl text-left">Master Your Nursing Subjects with Expert Tutoring</h1>
+      <p className="text-xl md:text-xl mb-2 text-neutral-700 text-left leading-4">
+        Personalized Online Tutoring to Help You Understand Complex Nursing<br/>
+         Concepts, from Pharmacology to Pathophysiology and Beyond.
+      </p>
+      <p className="text-neutral-600 mb-8 text-left">
+        Feeling overwhelmed by the depth of information in your nursing courses? Struggling to connect the dots between lectures, readings, and clinical application? Online Course Experts offers specialized Nursing Subject Tutoring designed to provide clarity and deepen your understanding of core nursing concepts. Our experienced tutors work with you one-on-one online to ensure you build a strong, confident foundation in your coursework.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
 
       {/* Challenging Subjects Section */}
       <section className="section">
@@ -133,7 +137,7 @@ const NursingTutoringPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Nursing Subjects Section */}
+  {/* Nursing Subjects Section */}
       <section className="section py-20 md:py-28">
         <div className="container-custom">
           <SectionTitle 
@@ -146,21 +150,27 @@ const NursingTutoringPage: React.FC = () => {
               {nursingSubjects.map((subject, index) => (
                 <motion.li 
                   key={index}
-                  className="flex items-center"
+                  className="flex items-center gap-4"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                 >
-                  <ArrowRight className="h-6 w-6 text-secondary-400 mr-3" />
-                  <p className="text-lg">{subject}</p>
+                  {/* Icon */}
+                  <img 
+                    src={`/img${index + 1}.png`} 
+                    alt={`${subject} Icon`} 
+                    className="h-8 w-8 object-contain mr-3"
+                  />
+                  {/* Subject Text */}
+                  <p className="text-lg leading-relaxed">{subject}</p>
                 </motion.li>
               ))}
             </ul>
           </div>
         </div>
       </section>
-
+      
       {/* Call to Action Section */}
       <section className="bg-primary-50 py-20 md:py-28">
         <div className="container-custom">

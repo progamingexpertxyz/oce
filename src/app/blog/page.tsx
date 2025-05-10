@@ -14,11 +14,11 @@ const BlogPage: React.FC = () => {
 
   const blogPosts = [
     {
-      title: '5 Time Management Hacks for Nursing Students',
+      title: '5 Time Management Hacks  for Nursing Students',
       excerpt: 'Balancing clinical rotations, coursework, and personal life can be challenging. These practical time management strategies can help nursing students stay organized and reduce stress.',
       date: 'May 15, 2024',
       category: 'Study Strategies',
-      image: 'https://images.pexels.com/photos/6489663/pexels-photo-6489663.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: '/idea.png',
     },
     {
       title: 'Active Learning Strategies for Online Courses',
@@ -39,21 +39,21 @@ const BlogPage: React.FC = () => {
       excerpt: 'Ethical academic conduct is essential in all learning environments. This guide outlines best practices for maintaining integrity in virtual classrooms.',
       date: 'April 10, 2024',
       category: 'Academic Ethics',
-      image: 'https://images.pexels.com/photos/5428146/pexels-photo-5428146.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: 'image 8.png',
     },
     {
       title: 'Mastering APA Citation Style: Common Mistakes and How to Avoid Them',
       excerpt: 'Proper citations are crucial for academic writing. This article covers frequently made errors in APA formatting and provides solutions.',
       date: 'March 28, 2024',
       category: 'Citation Guides',
-      image: 'https://images.pexels.com/photos/3771074/pexels-photo-3771074.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: '/image 7.png',
     },
     {
       title: 'Study Techniques That Actually Work, According to Science',
       excerpt: 'Not all study methods are created equal. Explore evidence-based learning techniques that have been proven effective through research.',
       date: 'March 15, 2024',
       category: 'Study Strategies',
-      image: 'https://images.pexels.com/photos/4145153/pexels-photo-4145153.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+      image: '/image 6.png',
     },
   ];
 
@@ -69,27 +69,36 @@ const BlogPage: React.FC = () => {
 
   return (
     <>
-      <Head>
-        <title>Academic Tips & Resources Blog | Online Course Experts</title>
-      </Head>
-
+     
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.3 }}
       >
-        {/* Hero Section */}
-        <section className="py-20 md:py-28 bg-gradient-to-br from-primary-50 via-white to-secondary-50">
-          <div className="container-custom">
-            <div className="max-w-3xl mx-auto text-center">
-              <h1 className="mb-6">Academic Tips & Resources</h1>
-              <p className="text-lg text-neutral-700">
-                Explore helpful articles, guides, and tips to enhance your academic journey. Our resources are designed to support your learning and academic success.
-              </p>
-            </div>
-          </div>
-        </section>
+       <section className="w-full h-[40vh] mt-8 bg-gradient-to-br from-primary-50 via-white to-secondary-50 ">
+  <div className="container-custom h-full flex flex-col md:flex-row-reverse items-center justify-center gap-6">
+    {/* Right Side Image */}
+    <div className="w-full md:w-1/2">
+      <img
+        src="/bg-blog.png"
+        alt="Academic Resources"
+        className="w-[50%] h-full mt-10 ml-36 object-cover rounded-lg shadow-lg"
+      />
+    </div>
+
+    {/* Left Side Text */}
+    <div className="w-full md:w-1/2 px-4 mt-10">
+      <h1 className="text-left text-neutral-900 text-2xl md:text-5xl font-bold leading-6 mt-10 mb-2">
+        Academic Tips & Resources
+      </h1>
+      <p className="text-left text-neutral-700 text-sm md:text-lg leading-6">
+        Explore helpful articles, guides, and tips to enhance your academic journey. Our resources are designed to support your learning and academic success.
+      </p>
+    </div>
+  </div>
+</section>
+
 
         {/* Blog Categories */}
         <section className="py-8 border-b border-neutral-200">
@@ -112,7 +121,7 @@ const BlogPage: React.FC = () => {
         </section>
 
         {/* Featured Post */}
-        <section className="section">
+        <section className="py-4">
           <div className="container-custom">
             <motion.div
               className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
@@ -121,8 +130,8 @@ const BlogPage: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <div>
-                <span className="bg-secondary-100 text-secondary-600 text-sm font-medium px-3 py-1 rounded-full">Featured Post</span>
+              <div className='ml-5' >
+                <span className="bg-secondary-100  text-secondary-600 text-sm font-medium  px-3 py-1 rounded-full">Featured Post</span>
                 <h2 className="text-3xl font-bold mt-4 mb-4">{blogPosts[0].title}</h2>
                 <div className="flex items-center text-neutral-500 mb-4">
                   <Calendar className="h-4 w-4 mr-2" />
@@ -130,7 +139,7 @@ const BlogPage: React.FC = () => {
                   <span className="mx-2">•</span>
                   <span className="text-sm">{blogPosts[0].category}</span>
                 </div>
-                <p className="text-lg text-neutral-600 mb-6">
+                <p className="text-lg text-neutral-600 mb-6 leading-6">
                   {blogPosts[0].excerpt}
                 </p>
                 <Button variant="primary" link="#">
@@ -141,7 +150,7 @@ const BlogPage: React.FC = () => {
                 <img
                   src={blogPosts[0].image}
                   alt={blogPosts[0].title}
-                  className="rounded-lg shadow-lg w-full h-auto"
+                  className="rounded-lg shadow-lg w-[90%] h-auto"
                 />
               </div>
             </motion.div>
@@ -149,7 +158,7 @@ const BlogPage: React.FC = () => {
         </section>
 
         {/* Blog Posts Grid */}
-        <section className="section bg-neutral-50">
+        <section className="py-4 bg-neutral-50">
           <div className="container-custom">
             <SectionTitle
               title="Latest Articles"
@@ -187,7 +196,7 @@ const BlogPage: React.FC = () => {
               ))}
             </div>
 
-            <div className="mt-12 text-center">
+            <div className="mt-6 text-center">
               <Button variant="outline">
                 Load More Articles
               </Button>
