@@ -99,7 +99,7 @@ const NursingTutoringPage: React.FC = () => {
     </div>
 
     {/* Card Wrapper */}
-    <div className="bg-white border border-neutral-100 shadow-lg rounded-xl p-8 md:p-5 flex flex-col md:flex-row items-center gap-10">
+    <div className="bg-white border  shadow-sm rounded-xl p-8 md:p-5 flex flex-col md:flex-row items-center gap-10">
 
       {/* Left: Image */}
       <div className="md:w-1/2 flex justify-center">
