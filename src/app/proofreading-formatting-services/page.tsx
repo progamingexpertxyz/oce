@@ -66,7 +66,7 @@ const faqs = [
       transition={{ duration: 0.3 }}
     >
      {/* Hero Section */}
-<section className="py-20 md:py-28 bg-gradient-to-br w-full h-[85vh] from-primary-50 via-white to-secondary-50">
+<section className="py-20 md:py-28 w-full h-[85vh] bg-gradient-to-br from-primary-50 via-white to-secondary-50">
   <div className="container-custom">
     <div className="flex flex-col md:flex-row items-center md:items-start gap-10">
       
@@ -87,7 +87,7 @@ const faqs = [
       {/* Right: Image */}
       <div className="md:w-1/2">
         <img
-          src="/Academic1.jpg" // Replace with your actual image
+          src="/11 1.png" // Replace with your actual image
           alt="Proofreading illustration"
           className="w-[70%] h-auto ml-28 -mt-4 rounded-xl shadow-lg"
         />

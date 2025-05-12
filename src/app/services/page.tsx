@@ -23,34 +23,39 @@ const ServicesPage: React.FC = () => {
         exit={{ opacity: 0 }}
         transition={{ duration: 0.3 }}
       >
-        {/* Hero Section */}
-        <section className="relative pt-20 bg-gradient-to-l from-primary-50 via-pink-100 to-secondary-50 overflow-hidden">
-          <div
-            className="absolute inset-0 z-0 bg-no-repeat bg-fixed"
-            style={{
-              backgroundImage: "url('/bg3.jpg')",
-              opacity: 0.45,
-              backgroundPosition: 'left 18% top',
-              backgroundSize: 'cover',
-            }}
-          ></div>
+       {/* Hero Section */}
+<section className="py-20 h-[60vh] bg-gradient-to-br from-primary-50 via-white to-secondary-50">
+  <div className="container-custom flex flex-col md:flex-row items-center gap-10">
+    
+    {/* Left: Text Content */}
+    <div className="md:w-1/2 text-left mt-8 ml-3">
+      <h1 className="text-3xl md:text-4xl font-bold mb-2 text-black">
+        Ethical Academic Support <br /> Services Tailored for You
+      </h1>
+      <p className="text-md text-gray-800 leading-5">
+        Online Course Experts offers a range of personalized academic support
+        services designed to help you understand challenging subjects, develop
+        crucial learning strategies, and present your work professionally.
+ 
+        </p>
+        <p className="text-md text-gray-800 -mt-2 leading-5">
+        We are committed to providing ethical assistance that fosters genuine learning
+        and academic integrity. Explore our core services below.<br />
+        Please contact us for current service rates.
+      </p>
+    </div>
 
-          <div className="relative z-10 container-custom h-full flex items-center justify-start min-h-[50vh] pb-2 pt-10 md:pt-1">
-            <div className="max-w-3xl text-left ml-5">
-              <h1 className="text-3xl md:text-4xl font-bold mb-6 text-black">
-                Ethical Academic Support Services<br />Tailored for You
-              </h1>
-              <p className="text-md md:text-md text-black -mt-4">
-                Online Course Experts offers a range of personalized academic support <br />
-                services designed to help you understand challenging subjects, develop <br />
-                crucial learning strategies, and present your work professionally. We are <br />
-                committed to providing ethical assistance that fosters genuine learning <br />
-                and academic integrity. Explore our core services below.<br />
-                Please contact us for current service rates.
-              </p>
-            </div>
-          </div>
-        </section>
+    {/* Right: Optional Image */}
+    <div className="md:w-1/2 flex justify-center">
+      <img
+        src="/bg3.jpg"
+        alt="Academic Support"
+        className="rounded-xl w-[90%] md:w-full object-cover"
+      />
+    </div>
+  </div>
+</section>
+
 
         {/* Subject-Matter Tutoring Section */}
         <section className="py-8">

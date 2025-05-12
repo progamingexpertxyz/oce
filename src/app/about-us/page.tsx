@@ -47,13 +47,13 @@ const AboutPage: React.FC = () => {
       transition={{ duration: 0.3 }}
     >
       {/* Hero Section */}
-      <section className="py-20 md:py-28  w-full h-[65vh] bg-gradient-to-br from-primary-50 via-white to-secondary-50">
+      <section className="py-20 md:py-28  w-full h-[55vh] bg-gradient-to-br from-primary-50 via-white to-secondary-50">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 ml-5">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12   ml-5">
             <div>
               <h1 className="mb-2 text-4xl leading-9">
                 About Online Course Experts <br /> Your Partner in Ethical Academic Success</h1>
-              <p className="text-md text-neutral-700 mb-6 leading-5">
+              <p className="text-base text-neutral-700 mb-6 leading-5">
                 At Online Course Experts, we believe in the power of genuine learning and academic integrity. Our mission is to provide high-quality, ethical academic support services that empower students to truly understand their coursework, develop essential skills and strategies, and achieve their educational goals with confidence.
               </p>
             </div>
@@ -61,7 +61,7 @@ const AboutPage: React.FC = () => {
               <img
                 src="/about.png"
                 alt="Academic support team"
-                className="rounded-lg shadow-xl w-[40%] h-auto ml-48"
+                className="rounded-lg shadow-xl w-[50%] h-auto -mt-1 ml-36"
               />
             </div>
           </div>
@@ -73,10 +73,10 @@ const AboutPage: React.FC = () => {
       {/* Mission & Values */}
       <section className="py-8 bg-gray-50">
         <div className="container-custom">
-         <div className="max-w-3xl mx-auto">
-    <h2 className="text-4xl font-extrabold text-blue-900 text-center mb-4">Our Mission & Values</h2>
+         <div className="max-w-3xl mx-auto ">
+    <h2 className="text-4xl font-bold text-black text-center mb-4">Our Mission & Values</h2>
     <p className="text-xl text-center text-gray-700 leading-6">
-      We’re dedicated to <span className="text-secondary-400 font-semibold">fostering independent learning</span> and helping students
+      We’re dedicated to fostering independent learning and helping students
     and helping students navigate their academic journey successfully.
     </p>
    
@@ -91,7 +91,7 @@ const AboutPage: React.FC = () => {
               transition={{ duration: 0.6 }}
               className="bg-primary-50 w-full px-6 py-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform ease-in-out"
             >
-              <h3 className=" text-3xl font-semibold mb-1 text-primary-700">Our Mission</h3>
+              <h3 className=" text-3xl font-semibold mb-1 text-black">Our Mission</h3>
               <p className="text-neutral-700 text-lg leading-6">
                 To provide personalized, expert academic support that enhances understanding , builds<br />
                  critical skills and effective strategies, and promotes ethical learning practices.
@@ -106,7 +106,7 @@ const AboutPage: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="bg-white w-full p-6 rounded-xl -mt-14 shadow-lg transform hover:scale-105 transition-transform ease-in-out"
             >
-              <h3 className="text-3xl font-semibold mb-6 text-primary-700">Our Values</h3>
+              <h3 className="text-3xl font-semibold mb-6 text-black">Our Values</h3>
               <div className="space-y-6">
                 {values.map((value) => (
                   <div key={value.name} className="flex items-start space-x-4">
@@ -210,7 +210,7 @@ const AboutPage: React.FC = () => {
         <div className="container-custom">
           <div className="mb-0">
             <h2 className="text-3xl mt-10 md:text-6xl font-extrabold text-neutral-800 leading-snug text-left">
-              <span className="block text-secondary-500">Supporting Your</span>
+              <span className="block text-secondary-500 -mt-5">Supporting Your</span>
               <span className="block text-primary-600">Academic Journey</span>
             </h2>
 

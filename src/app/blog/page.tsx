@@ -82,12 +82,12 @@ const BlogPage: React.FC = () => {
       <img
         src="/bg-blog.png"
         alt="Academic Resources"
-        className="w-[50%] h-full mt-10 ml-36 object-cover rounded-lg shadow-lg"
+        className="w-[60%] h-full mt-10 ml-36 object-cover rounded-lg shadow-lg"
       />
     </div>
 
     {/* Left Side Text */}
-    <div className="w-full md:w-1/2 px-4 mt-10">
+    <div className="w-full md:w-1/2 px-4 mt-12">
       <h1 className="text-left text-neutral-900 text-2xl md:text-5xl font-bold leading-6 mt-10 mb-2">
         Academic Tips & Resources
       </h1>

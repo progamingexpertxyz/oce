@@ -79,18 +79,34 @@ const NursingAcademicSupportPage: React.FC = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
     >
-      {/* Hero Section */}
-      <section className="relative h-[50vh] pt-20 bg-gradient-to-br from-primary-50 via-white to-secondary-50 overflow-hidden">
-        <div className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed" style={{ backgroundImage: "url('/011.png')", opacity: 0.65 }}></div>
-        <div className="relative z-10 max-w-screen-xl mx-auto px-4 flex items-center h-full">
-          <div className="max-w-2xl">
-            <h1 className="mb-4 text-4xl font-bold text-gray-800 ml-7">Academic Support & Strategies</h1>
-            <p className="text-gray-900 text-base leading-relaxed ml-7">
-              Navigate the demands of your nursing program with greater confidence <br /> and effectiveness. Our Nursing Academic Support service provides personalized guidance focused on empowering you with the essential <br /> skills and strategies needed to succeed.
-            </p>
-          </div>
-        </div>
-      </section>
+     {/* Hero Section */}
+<section className="py-20 h-[55vh] bg-gradient-to-br from-primary-50 via-white to-secondary-50">
+  <div className="max-w-screen-xl mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
+
+    {/* Left: Text Content */}
+    <div className="md:w-1/2 ml-8 mt-8">
+      <h1 className="mb-2 text-5xl font-bold text-gray-800">
+        Academic Support  & Strategies
+      </h1>
+      <p className="text-gray-900 text-lg leading-relaxed">
+        Navigate the demands of your nursing program with greater confidence 
+        and effectiveness. Our Nursing Academic Support service provides personalized guidance focused on empowering you with the essential
+        skills and strategies needed to succeed.
+      </p>
+    </div>
+
+    {/* Right: Image */}
+    <div className="md:w-1/2 flex justify-center">
+      <img
+        src="/k.png"
+        alt="Academic Support"
+        className="rounded-xl w-[90%] md:w-[55%] ml-10 object-cover"
+      />
+    </div>
+
+  </div>
+</section>
+
 
       {/* Benefits Section */}
       <section className="py-10">

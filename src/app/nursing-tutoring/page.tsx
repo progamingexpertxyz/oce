@@ -61,21 +61,44 @@ const NursingTutoringPage: React.FC = () => {
 
   return (
     <>
-<section
-  className="relative py-20 md:py-28 w-full h-[70vh] bg-contain bg-no-repeat bg-fixed"
-  style={{ backgroundImage: "url('/img0.png')" }}
->
-  <div className="absolute inset-0  bg-gradient-to-br from-primary-100 via-white to-secondary-50 opacity-50"></div> {/* Overlay */}
-  <div className="relative container-custom z-10">
-    <div className="max-w-3xl ml-5">
-      <h1 className="mb-4 text-5xl text-left text-black">Master Your Nursing Subjects with Expert Tutoring</h1>
-      <p className="text-xl md:text-xl mb-2 text-neutral-900 text-left leading-4">
-        Personalized Online Tutoring to Help You Understand Complex Nursing<br />
-        Concepts, from Pharmacology to Pathophysiology and Beyond.
-      </p>
-      <p className="text-neutral-900 mb-8 text-left">
-        Feeling overwhelmed by the depth of information in your nursing courses? Struggling to connect the dots between lectures, readings, and clinical application? Online Course Experts offers specialized Nursing Subject Tutoring designed to provide clarity and deepen your understanding of core nursing concepts. Our experienced tutors work with you one-on-one online to ensure you build a strong, confident foundation in your coursework.
-      </p>
+<section className="relative py-20 md:py-20  w-full ">
+  {/* Gradient Overlay */}
+  <div className="absolute inset-0 w-full h-[75vh]  bg-gradient-to-br from-primary-100 via-white to-secondary-100 opacity-50"></div>
+
+  {/* Main Content */}
+  <div className="relative container-custom z-10 mt-8 ">
+    <div className="flex flex-col md:flex-row items-center justify-between gap-10">
+      
+      {/* Left: Text Content */}
+      <div className="md:w-1/2 ml-5">
+        <h1 className="mb-3 text-4xl md:text-4xl font-bold text-black">
+          Master Your Nursing Subjects with Expert Tutoring
+        </h1>
+        <p className="text-lg md:text-base mb-2 text-neutral-900 leading-7">
+          Personalized Online Tutoring to Help You Understand Complex <br/>
+          Nursing Concepts, from Pharmacology to Pathophysiology and Beyond.
+        </p>
+        <p className="text-neutral-900 text-sm mb-2 leading-5">
+          Feeling overwhelmed by the depth of information in your nursing courses? Struggling to connect the dots between lectures, readings,
+           and clinical application? Online Course Experts offers specialized Nursing Subject <br/>
+           Tutoring designed to provide clarity and deepen 
+           your understanding <br/>
+           of core nursing concepts. Our experienced 
+           tutors work with you <br/> 
+           one-on-one online to ensure you build a 
+            strong, confident foundation<br/>  in your coursework.
+        </p>
+      </div>
+
+      {/* Right: Image */}
+      <div className="md:w-1/2 flex justify-center">
+        <img
+          src="/img0.png"
+          alt="Nursing Tutoring"
+          className="w-[90%] md:w-[80%] -mt-2 rounded-xl object-cover"
+        />
+      </div>
+
     </div>
   </div>
 </section>
@@ -83,12 +106,12 @@ const NursingTutoringPage: React.FC = () => {
 
 
 {/* Challenging Subjects Section */}
-<section className="py-12">
+<section className="py-6">
   <div className="container-custom">
 
     {/* Heading */}
     <div className="text-center mb-10">
-      <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-4">
+      <h2 className="text-3xl sm:text-4xl font-extrabold text-black mb-4">
         Are You Finding These Nursing 
         Subjects Challenging?
       </h2>
@@ -97,40 +120,41 @@ const NursingTutoringPage: React.FC = () => {
         Expert personalized tutoring can illuminate difficult topics.
       </p>
     </div>
+{/* Card Wrapper */}
+<div className="bg-white  rounded-xl -mt-18 p-6 md:p-4 max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-2 ">
 
-    {/* Card Wrapper */}
-    <div className="bg-white border  shadow-sm rounded-xl p-8 md:p-5 flex flex-col md:flex-row items-center gap-10">
+  {/* Left: Image */}
+  <div className="md:w-[45%] flex justify-center">
+    <img
+      src="/sub.png"
+      alt="Nursing Tutoring"
+      className="w-[70%] md:w-[80%] rounded-lg object-cover"
+    />
+  </div>
 
-      {/* Left: Image */}
-      <div className="md:w-1/2 flex justify-center">
-        <img
-          src="/sub.png"
-          alt="Nursing Tutoring"
-          className="w-[80%] md:w-[60%] rounded-lg ml-36 -mt-6 object-cover"
-        />
-      </div>
-
-      {/* Right: Subject List */}
-      <div className="md:w-1/2 mr-20 mt-2">
-        <div className="flex flex-wrap gap-2">
-          {challengingSubjects.map((subject, index) => (
-            <motion.div
-              key={index}
-              className="flex items-center w-full md:w-auto"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-            >
-              <CheckCircle className="h-6 w-6 text-secondary-400 -mt-3 mr-3 flex-shrink-0" />
-              <p className="text-base leading-5">{subject}</p>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-
+  {/* Right: Subject List */}
+  <div className="md:w-[55%]">
+    <div className="flex flex-wrap gap-2">
+      {challengingSubjects.map((subject, index) => (
+        <motion.div
+          key={index}
+          className="flex items-center w-full md:w-auto"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: index * 0.1 }}
+        >
+          <CheckCircle className="h-5 w-5 text-secondary-400 mr-2 flex-shrink-0" />
+          <p className="text-sm md:text-base mt-4  leading-5">{subject}</p>
+        </motion.div>
+      ))}
     </div>
   </div>
+
+</div>
+
+    </div>
+
 </section>
 
 
