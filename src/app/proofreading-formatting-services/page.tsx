@@ -1,12 +1,18 @@
-"use client";
-import React, { useEffect } from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import SectionTitle from '../components/ui/SectionTitle';
-import Button from '../components/ui/Button';
-import { CheckCircle, X, AlertCircle } from 'lucide-react';
+import { CheckCircle, X, AlertCircle, ChevronDown } from 'lucide-react';
 import NursingDiscountForm from '../components/home/form';
 
 const ProofreadingPage: React.FC = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggleFAQ = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   useEffect(() => {
     document.title = 'Academic Proofreading & Formatting | APA, MLA | Online Course Experts';
     window.scrollTo(0, 0);
@@ -32,6 +38,26 @@ const ProofreadingPage: React.FC = () => {
     'Expanding content to meet word counts',
   ];
 
+
+const faqs = [
+  {
+    question: "What is the typical turnaround time?",
+    answer:
+      "Standard turnaround is 48-72 hours, depending on document length and complexity. We also offer expedited services for urgent needs, subject to availability.",
+  },
+  {
+    question: "Is my document kept confidential?",
+    answer:
+      "Your document is never shared with third parties, and our proofreaders sign confidentiality agreements.",
+  },
+  {
+    question: "What file formats do you accept?",
+    answer:
+      "We accept Microsoft Word documents (.doc, .docx) as they allow for track changes. We can also work with Google Docs by providing you with commenting access.",
+  },
+];
+
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -50,7 +76,8 @@ const ProofreadingPage: React.FC = () => {
           Academic Proofreading & Formatting Services
         </h1>
         <p className="text-lg text-neutral-700 text-left mb-0 leading-relaxed">
-          Polish Your Papers for Professional Presentation and Proper Citation
+          Polish Your Papers for Professional Presentation <br/>
+          and Proper Citation
         </p>
         <p className="text-neutral-600 mb-6 leading-relaxed text-sm">
           Ensure your hard work is presented clearly and professionally. Our meticulous proofreading service polishes your academic papers by checking for errors in grammar, spelling, punctuation, syntax, and ensuring accurate adherence to citation styles like APA, MLA, and Chicago.
@@ -60,9 +87,9 @@ const ProofreadingPage: React.FC = () => {
       {/* Right: Image */}
       <div className="md:w-1/2">
         <img
-          src="/images/proofreading-hero.jpg" // Replace with your actual image
+          src="/Academic1.jpg" // Replace with your actual image
           alt="Proofreading illustration"
-          className="w-full h-auto rounded-xl shadow-lg"
+          className="w-[70%] h-auto ml-28 -mt-4 rounded-xl shadow-lg"
         />
       </div>
     </div>
@@ -129,12 +156,16 @@ const ProofreadingPage: React.FC = () => {
 </section>
 
       {/* Citation Styles Section */}
-<section className="section bg-neutral-50">
+<section className="py-6 bg-primary-600">
   <div className="container-custom">
-    <SectionTitle 
-      title="Citation Styles We Support"
-      subtitle="Our proofreading experts are proficient in all major academic citation styles."
-    />
+  <div className="flex flex-col items-center text-center ">
+  <h2 className="text-4xl font-extrabold text-gray-50 mb-4">
+    Citation Styles We Support
+  </h2>
+  <p className="text-lg text-gray-100 max-w-2xl">
+    Our proofreading experts are proficient in all major academic citation styles.
+  </p>
+</div>
     
     <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6">
       <motion.div 
@@ -185,7 +216,7 @@ const ProofreadingPage: React.FC = () => {
 </section>
 
       {/* Process Section */}
-      <section className="py-4 ml-5">
+      <section className="py-8 ml-5">
         <div className="container-custom">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -198,23 +229,23 @@ const ProofreadingPage: React.FC = () => {
               <ol className="space-y-6 list-decimal list-inside">
                 <li className="text-lg">
                   <span className="font-bold">Submit Your Document</span>
-                  <p className="ml-6 mt-2 text-neutral-600">Upload your document through our secure system along with any specific requirements or style guides.</p>
+                  <p className="ml-6 mt-0 text-neutral-600">Upload your document through our secure system along with any specific requirements or style guides.</p>
                 </li>
                 <li className="text-lg">
                   <span className="font-bold">Get a Quote</span>
-                  <p className="ml-6 mt-2 text-neutral-600">We'll review your document and provide a quote based on word count, complexity, and turnaround time.</p>
+                  <p className="ml-6 mt-0 text-neutral-600">We'll review your document and provide a quote based on word count, complexity, and turnaround time.</p>
                 </li>
                 <li className="text-lg">
                   <span className="font-bold">Expert Review</span>
-                  <p className="ml-6 mt-2 text-neutral-600">Once approved, our professional proofreader carefully reviews your document, making necessary corrections.</p>
+                  <p className="ml-6 mt-0 text-neutral-600">Once approved, our professional proofreader carefully reviews your document, making necessary corrections.</p>
                 </li>
                 <li className="text-lg">
                   <span className="font-bold">Detailed Corrections</span>
-                  <p className="ml-6 mt-2 text-neutral-600">We use track changes or comments to show all corrections and explain significant edits.</p>
+                  <p className="ml-6 mt-0 text-neutral-600">We use track changes or comments to show all corrections and explain significant edits.</p>
                 </li>
                 <li className="text-lg">
-                  <span className="font-bold">Receive Your Polished Document</span>
-                  <p className="ml-6 mt-2 text-neutral-600">Your document is returned by the agreed deadline, ready for submission with confidence.</p>
+                  <span className="font-bold ">Receive Your Polished Document</span>
+                  <p className="ml-6 mt-0 text-neutral-600">Your document is returned by the agreed deadline, ready for submission with confidence.</p>
                 </li>
               </ol>
             </motion.div>
@@ -226,7 +257,7 @@ const ProofreadingPage: React.FC = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <img 
-                src="/pic2.png" 
+                src="/pic8.png" 
                 alt="Proofreading process" 
                 className="rounded-lg shadow-lg w-[60%] ml-28 mt-4 h-auto"
               />
@@ -246,17 +277,18 @@ const ProofreadingPage: React.FC = () => {
       <h2 className="text-5xl font-semibold mb-2 text-black">
         Ready to Get Started?
       </h2>
-      <p className="text-lg text-black/90 leading-5 mb-2">
-        Polish your academic paper today! Our experts are ready to <br/>
-        help you achieve perfect clarity, structure, and citation accuracy.
+      <p className="text-lg text-black/70 leading-5 mb-2">
+        Polish your academic paper today! Our experts are ready <br/> 
+        to help you achieve perfect clarity, structure, and citation <br/>
+         accuracy.
       </p>
-      <p className="text-base text-black/90 leading-5 mb-4">
-        Pricing for proofreading services varies depending on the complexity of <br/>
-        the task, length of the document, and turnaround time. Contact us for a <br/>
-         personalized quote.
+      <p className="text-base text-black/70 leading-5 mb-4">
+        Pricing for proofreading services varies depending on the <br/>  
+        complexity of the task, length of the document, and <br/>
+         turnaround time. Contact us for a personalized quote.
       </p>
-      <p className="text-xl text-pink-600 leading-snug">
-        Start your journey with us today and receive a tailored <br />
+      <p className="text-xl text-primary-600 leading-snug">
+        Start your journey with us today and receive a <br />tailored 
         discount on your first consultation!
       </p>
     </div>
@@ -265,9 +297,65 @@ const ProofreadingPage: React.FC = () => {
     <div className=" mt-6 md:mt-0">
       <NursingDiscountForm />
     </div>
+    </div>
     
-  </div>
+
+ 
 </section>
+<section className="py-12 bg-white">
+      {/* Title */}
+      <h2 className="text-4xl font-bold text-gray-800 mb-6 text-center">FAQ</h2>
+
+      {/* Card Container */}
+      <div className="mx-auto bg-gradient-to-br from-primary-50 via-white to-secondary-50 rounded-xl shadow-xl px-6 py-10 w-full max-w-4xl">
+
+        {/* FAQ + Image Row */}
+        <div className="flex flex-col md:flex-row items-start gap-10">
+
+          {/* FAQ List */}
+          <div className="flex-1 space-y-4">
+            {faqs.map((faq, index) => (
+              <motion.div
+                key={index}
+                className="bg-gray-50 border border-gray-200 rounded-md p-4 shadow-sm"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
+              >
+                <div
+                  className="flex justify-between items-start cursor-pointer"
+                  onClick={() => toggleFAQ(index)}
+                >
+                  <h3 className="text-sm font-semibold text-gray-800 pr-3">
+                    {faq.question}
+                  </h3>
+                  <ChevronDown
+                    className={`w-4 h-4 mt-1 text-gray-500 transition-transform duration-300 ${
+                      openIndex === index ? 'rotate-180' : ''
+                    }`}
+                  />
+                </div>
+                {openIndex === index && (
+                  <p className="mt-3 text-sm text-gray-600 leading-relaxed">
+                    {faq.answer}
+                  </p>
+                )}
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Image */}
+          <div className="w-[280px] shrink-0 hidden md:block -mr-4 -mt-6">
+            <img
+              src="/image23.png"
+              alt="FAQ Visual"
+              className="w-full h-auto object-contain"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
 
     </motion.div>
   );

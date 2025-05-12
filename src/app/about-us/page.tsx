@@ -73,10 +73,14 @@ const AboutPage: React.FC = () => {
       {/* Mission & Values */}
       <section className="py-8 bg-gray-50">
         <div className="container-custom">
-          <SectionTitle
-            title="Our Mission & Values"
-            subtitle="We're dedicated to fostering independent learning and helping students navigate their academic journey successfully."
-          />
+         <div className="max-w-3xl mx-auto">
+    <h2 className="text-4xl font-extrabold text-blue-900 text-center mb-4">Our Mission & Values</h2>
+    <p className="text-xl text-center text-gray-700 leading-6">
+      We’re dedicated to <span className="text-secondary-400 font-semibold">fostering independent learning</span> and helping students
+    and helping students navigate their academic journey successfully.
+    </p>
+   
+    </div>
 
           <div className="flex flex-col gap-16">
             {/* Mission Block */}
@@ -87,10 +91,10 @@ const AboutPage: React.FC = () => {
               transition={{ duration: 0.6 }}
               className="bg-primary-50 w-full px-6 py-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform ease-in-out"
             >
-              <h3 className="text-3xl font-semibold mb-4 text-primary-700">Our Mission</h3>
-              <p className="text-neutral-700 text-lg leading-relaxed">
-                To provide personalized, expert academic support that enhances understanding, <br />
-                builds critical skills and effective strategies, and promotes ethical learning practices.
+              <h3 className=" text-3xl font-semibold mb-1 text-primary-700">Our Mission</h3>
+              <p className="text-neutral-700 text-lg leading-6">
+                To provide personalized, expert academic support that enhances understanding , builds<br />
+                 critical skills and effective strategies, and promotes ethical learning practices.
               </p>
             </motion.div>
 
@@ -120,7 +124,7 @@ const AboutPage: React.FC = () => {
       </section>
 
 
-      <section className="py-2 bg-neutral-50">
+      <section className="py-6 bg-neutral-50">
         <div className="container-custom">
           <SectionTitle
             title="Why Choose Us?"
@@ -205,7 +209,7 @@ const AboutPage: React.FC = () => {
       <section className="py-6 ml-5 ">
         <div className="container-custom">
           <div className="mb-0">
-            <h2 className="text-3xl mt-10 md:text-5xl font-extrabold text-neutral-800 leading-snug text-left">
+            <h2 className="text-3xl mt-10 md:text-6xl font-extrabold text-neutral-800 leading-snug text-left">
               <span className="block text-secondary-500">Supporting Your</span>
               <span className="block text-primary-600">Academic Journey</span>
             </h2>
@@ -223,8 +227,8 @@ const AboutPage: React.FC = () => {
               <p className="text-base mb-2 leading-5">
                 We understand the challenges students face. Our services cover both deep subject-matter understanding through tutoring and the development of crucial academic strategies through personalized support, helping you build a strong foundation for success.
               </p>
-              <p className="text-sm leading-5">
-                Whether you're struggling with specific course content, need guidance on developing better study habits, or want to ensure your papers are polished and professional, our <br/>
+              <p className="text-sm leading-5 -mt-1">
+                Whether you're struggling with specific course content, need guidance on developing better study habits, or want to ensure your papers are polished  <br/> and professional, our
                  team is here to provide ethical, effective support.
               </p>
 

@@ -92,7 +92,7 @@ const ServicesPage: React.FC = () => {
                   alt="Subject tutoring session"
                   width={480}
                   height={320}
-                  className="rounded-lg shadow-lg w-full h-auto mt-10 ml-18"
+                  className="rounded-lg shadow-lg w-[80%] h-auto mt-10 ml-18"
                 />
               </motion.div>
             </div>
@@ -115,7 +115,7 @@ const ServicesPage: React.FC = () => {
                   alt="Nursing student receiving academic support"
                   width={480}
                   height={320}
-                  className="rounded-lg shadow-lg w-full h-auto"
+                  className="rounded-lg shadow-lg w-[80%] h-auto"
                 />
               </motion.div>
 
@@ -131,7 +131,10 @@ const ServicesPage: React.FC = () => {
                 </div>
                 <h2 className="text-3xl font-bold mb-3 mt-0">Nursing Academic Support</h2>
                 <p className="text-md mb-2 -mt-3">
-                  Navigate the unique demands of your nursing program with confidence. This personalized support focuses on developing effective study habits, time management techniques, research skills, strategies for approaching assignments ethically, and navigating online learning environments successfully.
+                  Navigate the unique demands of your nursing program with confidence. This personalized support focuses on developing <br/>
+                  effective study habits, time management techniques, research <br />
+                  skills, strategies for approaching assignments ethically, <br/>
+                  and navigating online learning environments successfully.
                 </p>
                 <ul className="list-disc list-inside mb-6 text-neutral-700">
                   <li>Effective study techniques for nursing content</li>
@@ -188,7 +191,7 @@ const ServicesPage: React.FC = () => {
                   alt="Proofreading and formatting service"
                   width={480}
                   height={320}
-                  className="rounded-lg shadow-lg w-full h-auto mt-10 ml-18"
+                  className="rounded-lg shadow-lg w-[80%] h-auto mt-10 ml-18"
                 />
               </motion.div>
             </div>

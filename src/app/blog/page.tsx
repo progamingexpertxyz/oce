@@ -1,6 +1,5 @@
 "use client";
 import { useEffect } from 'react';
-import Head from 'next/head';
 import { motion } from 'framer-motion';
 import SectionTitle from '../components/ui/SectionTitle';
 import Button from '../components/ui/Button';
@@ -76,10 +75,10 @@ const BlogPage: React.FC = () => {
         exit={{ opacity: 0 }}
         transition={{ duration: 0.3 }}
       >
-       <section className="w-full h-[40vh] mt-8 bg-gradient-to-br from-primary-50 via-white to-secondary-50 ">
+       <section className="w-full h-[50vh]  bg-gradient-to-br from-primary-50 via-white to-secondary-50 ">
   <div className="container-custom h-full flex flex-col md:flex-row-reverse items-center justify-center gap-6">
     {/* Right Side Image */}
-    <div className="w-full md:w-1/2">
+    <div className="w-full md:w-1/2 mt-8">
       <img
         src="/bg-blog.png"
         alt="Academic Resources"
