@@ -26,11 +26,11 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.4, delay: delay * 0.1 }}
     >
-      <div className="p-4 bg-primary-50 rounded-full w-16 h-16 flex items-center justify-center text-primary-500 mb-6">
+      <div className="p-3 -mt-4 md:-mt-0 bg-primary-50 rounded-full w-12 h-12 md:w-16 md:h-16 flex items-center justify-center text-primary-500 mb:2 md:mb-6">
         {icon}
       </div>
-      <h3 className="text-xl font-bold mb-3">{title}</h3>
-      <p className="text-neutral-600 mb-6 flex-grow">{description}</p>
+      <h3 className="text-sm md:text-xl font-bold mb-1 md:mb-3">{title}</h3>
+      <p className="text-neutral-600 mb-0 md:mb-6 text-xs md:text-base flex-grow">{description}</p>
       <Link 
         href={link}
         className="mt-auto inline-flex items-center text-primary-500 font-medium hover:text-primary-600 transition-colors group"

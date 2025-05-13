@@ -33,10 +33,16 @@ const TestimonialsSection: React.FC = () => {
   return (
     <section className="py-8">
       <div className="container-custom">
-        <SectionTitle 
-          title="What Our Students Say"
-          subtitle="Hear from students who have enhanced their academic journey with our support."
-        />
+    <div className="text-center max-w-3xl mx-auto mb-6 md:mb-12 px-4">
+  <h2 className="text-xl md:text-4xl  font-bold text-neutral-800 leading-snug">
+    What Our Students Say
+  </h2>
+  <p className=" text-sm md:leading-4 leading-4 mt-1 md:mt-3   md:text-base text-neutral-600">
+    Hear from students who have enhanced their <br/> academic journey  with our support.
+
+  </p>
+</div>
+
 
         <div className="max-w-2xl mx-auto"> {/* Centered and width controlled */}
           <Swiper

@@ -49,9 +49,9 @@ const Footer: React.FC = () => {
           </div>
           
           {/* Quick Links Column */}
-          <div className='ml-28'>
-            <h3 className="text-lg font-semibold mb-4 text-black ">Quick Links</h3>
-            <ul className="space-y-2">
+          <div className='ml-0 -mt-7 md:-mt-0 md:ml-28 '>
+            <h3 className="text-lg font-semibold mb-1 md:mb-4 text-black ">Quick Links</h3>
+            <ul className="space-y-0 md:space-y-2">
               {['/', '/about-us', '/services', '/how-it-works', '/blog', '/contact-us'].map((path, i) => (
                 <li key={i}><Link href={path} className="text-black hover:text-primary-300 transition-colors">{path.replace('/', '').replace('-', ' ') || 'Home'}</Link></li>
               ))}
@@ -60,8 +60,8 @@ const Footer: React.FC = () => {
           
           {/* Services Column */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-black">Our Services</h3>
-            <ul className="space-y-2">
+            <h3 className="text-lg font-semibold mb-1 md:mb-4 text-black">Our Services</h3>
+            <ul className="space-y-0 md:space-y-2">
               <li><Link href="/nursing-tutoring" className="text-black hover:text-primary-300 transition-colors">Nursing Tutoring</Link></li>
               <li><Link href="/nursing-academic-support" className="text-black hover:text-primary-300 transition-colors">Nursing Academic Support</Link></li>
               <li><Link href="/proofreading-formatting-services" className="text-black hover:text-primary-300 transition-colors">Proofreading & Formatting</Link></li>
@@ -70,8 +70,8 @@ const Footer: React.FC = () => {
           
           {/* Contact Column */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-black">Contact Us</h3>
-            <ul className="space-y-4">
+            <h3 className="text-lg font-semibold mb-1 md:mb-4 text-black">Contact Us</h3>
+            <ul className="space-y-1 md:space-y-2">
               <li className="flex items-start">
                 <Phone className="h-5 w-5 text-primary-600 mt-0.5 mr-2" />
                 <span className="text-black">+1 (917) 310-1591</span>
@@ -91,9 +91,9 @@ const Footer: React.FC = () => {
         </div>
         
         {/* Bottom Footer */}
-        <div className="mt-12 pt-8 border-t border-neutral-700 flex flex-col md:flex-row justify-between items-center text-sm text-black">
+        <div className=" mt-8 md:mt-12 pt-2 border-t border-neutral-700 flex flex-col md:flex-row justify-between items-center text-sm text-black">
           <p>&copy; {currentYear} Online Course Experts. All rights reserved.</p>
-          <div className="mt-4 md:mt-0 space-x-6">
+          <div className="-mt-3 md-mt-0 md:mt-4 space-x-6">
             <Link href="/privacy-policy" className="hover:text-primary-600 transition-colors">Privacy Policy</Link>
             <Link href="/terms-of-service" className="hover:text-primary-600 transition-colors">Terms of Service</Link>
           </div>

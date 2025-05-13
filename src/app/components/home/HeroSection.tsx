@@ -12,26 +12,26 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative pt-80 pb-2  md:pt-28 md:pt-34 md:pb-8 lg:pt-40 lg:pb-12 bg-gradient-to-ll from-white via-white to-secondary-50">
-      <div className="container-custom relative">
+    <section className="relative  pt-64 pb-2  md:pt-28 md:pt-34 md:pb-8 lg:pt-40 lg:pb-12 bg-gradient-to-ll from-white via-white to-secondary-50">
+      <div className="container-custom py-6 relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
 
-        <motion.div
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6, delay: 0.2 }}
-  className="order-1 lg:order-2 flex justify-center items-center relative"
->
-<video
-  src="/Header.mp4"
-  autoPlay
-  muted
-  playsInline
-  className="pointer-events-none select-none  w-[110%] md:w-[170%] lg:w-[190%] h-auto -mt-56 md:-mt-18 -left-6 transform lg:-left-2 z-0"
-/>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="order-1 lg:order-2 flex justify-center items-center relative"
+          >
+            <video
+              src="/Header.mp4"
+              autoPlay
+              muted
+              playsInline
+              className="pointer-events-none select-none  w-[110%] md:w-[170%] lg:w-[190%] h-auto -mt-56 md:-mt-18 -left-6 transform lg:-left-2 z-0"
+            />
 
 
-</motion.div>
+          </motion.div>
 
 
           {/* Content Section */}
@@ -44,29 +44,35 @@ const HeroSection = () => {
             {/* Play Button */}
             <button
               onClick={toggleVideoModal}
-              className="absolute top-0 -left-7 transform translate-x-1/2 -translate-y-1/2 text-black border border-black p-2.5 rounded-full shadow-lg hover:scale-110 transition-all duration-300 z-10 bg-white"
+              className="absolute top-0 -left-6 md:-left-7 -mt-5 md:-mt-0 transform translate-x-1/2 -translate-y-1/2 text-black border border-black p-2.5 rounded-full shadow-lg hover:scale-110 transition-all duration-300 z-10 bg-white"
             >
-              <FaPlay size={15} />
+              <div className="block md:hidden text-[12px]">
+                <FaPlay />
+              </div>
+              <div className="hidden md:block">
+                <FaPlay size={15} />
+              </div>
             </button>
 
             {/* Texts */}
-            <div className="space-y-3 max-w-2xl">
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-tight">
+            <div className="space-y-1 md:space-y-3 max-w-2xl  ">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl -mt-5 md:-mt-0 font-semibold leading-tight">
                 Master Your Coursework with Expert Academic Support
               </h1>
-              <p className="text-md text-neutral-700">
+              <p className="text-sm text-neutral-700 ">
                 Personalized Tutoring, Academic Strategies, and Proofreading to Help You Learn and Succeed Ethically.
               </p>
-              <p className="text-neutral-600">
-                Feeling overwhelmed by complex subjects or the demands of your studies? Online Course Experts provides dedicated, one-on-one support focused on deepening your subject understanding, enhancing your academic strategies, and polishing your written work.
+              <p className="text-neutral-600 text-xs md:text-base">
+                Feeling overwhelmed by complex subjects or the demands<span className="inline-block w-2 md:hidden"></span> of your studies? Online Course Experts provides dedicated, one-on-one support focused on deepening your subject understanding, enhancing your academic strategies, and polishing your written work.
               </p>
             </div>
-
-            {/* Buttons */}
-            <div className="flex gap-4 mt-6">
-              <Button link="/services" variant="primary" className="w-full sm:w-auto">
+            <div className="flex gap-4  md:mt-6">
+              <a
+                href="/services"
+                className="w-full text-sm md:text-base sm:w-auto  px-4 py-2 md:px-6 md:py-3 bg-primary-500 text-white font-semibold rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300"
+              >
                 Explore Our Services
-              </Button>
+              </a>
             </div>
           </motion.div>
         </div>

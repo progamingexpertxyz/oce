@@ -14,6 +14,7 @@ const servicesList = [
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
@@ -24,7 +25,10 @@ const Header: React.FC = () => {
   }, []);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const closeMenu = () => setIsMenuOpen(false);
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+    setIsServicesOpen(false);
+  };
 
   const isActive = (path: string) => pathname === path;
 
@@ -78,8 +82,6 @@ const Header: React.FC = () => {
             <Link href="/how-it-works" className={navLinkClass(isActive('/how-it-works'))}>How It Works</Link>
             <Link href="/blog" className={navLinkClass(isActive('/blog'))}>Resources</Link>
           </div>
-
-          {/* Nursing Button */}
           <div className="flex items-center gap-1">
             <Link
               href="/nursing-academic-support"
@@ -111,10 +113,10 @@ const Header: React.FC = () => {
             >
               <div className="flex justify-between items-center p-4 border-b">
                 <Link href="/" onClick={closeMenu} className="flex items-center gap-2">
-                  <img src="/Oce 1.png" alt="Logo" className="h-12 w-12 object-contain" />
-                  <span className="font-serif text-xl font-bold text-primary-500">
-                    Online Course <span className="text-secondary-400">Experts</span>
-                  </span>
+                  <img src="/Oce 1.png" alt="Logo" className=" h-12 w-12 object-contain" />
+                  <span className="font-ageo font-semibold text-xl text-black">
+            Online Course Experts
+          </span>
                 </Link>
                 <button 
                   className="p-2 text-neutral-700 focus:outline-none"
@@ -124,10 +126,35 @@ const Header: React.FC = () => {
                   <X size={24} />
                 </button>
               </div>
+
               <nav className="flex flex-col py-4">
                 <Link href="/" className={navLinkClass(isActive('/'))} onClick={closeMenu}>Home</Link>
                 <Link href="/about-us" className={navLinkClass(isActive('/about-us'))} onClick={closeMenu}>About Us</Link>
-                <Link href="/services" className={navLinkClass(isActive('/services'))} onClick={closeMenu}>Services</Link>
+
+                {/* Services Dropdown */}
+                <div className="flex flex-col">
+                  <button
+                    onClick={() => setIsServicesOpen(prev => !prev)}
+                    className="text-left px-3 py-2 text-neutral-700 font-medium focus:outline-none"
+                  >
+                    Services {isServicesOpen ? '▲' : '▼'}
+                  </button>
+                  {isServicesOpen && (
+                    <div className="ml-4 flex flex-col">
+                      {servicesList.map((service, index) => (
+                        <Link
+                          key={index}
+                          href={service.path}
+                          onClick={closeMenu}
+                          className="py-1 text-sm text-neutral-700 hover:text-primary-500"
+                        >
+                          {service.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
                 <Link href="/how-it-works" className={navLinkClass(isActive('/how-it-works'))} onClick={closeMenu}>How It Works</Link>
                 <Link href="/blog" className={navLinkClass(isActive('/blog'))} onClick={closeMenu}>Resources</Link>
                 <Link href="/nursing-academic-support" className="mx-4 mt-4 btn-primary text-center" onClick={closeMenu}>Nursing Academic Support</Link>

@@ -27,22 +27,23 @@ const ServicesSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-10 bg-neutral-50">
+    <section className=" py-8 md:py-10 bg-neutral-50">
     <div className="container-custom px-4 mx-auto">
       {/* Title Section */}
-      <div className="text-center mb-10">
-      <h2 className="text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight text-center">
-  How We Support Your Academic Journey
+      <div className="text-center mb-5 md:mb-10">
+      <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl -mt-4 md:-mt-0  font-bold text-gray-900 leading-6 md:leading-tight  text-center">
+  How We Support Your <br className="block md:hidden" /> Academic Journey
 </h2>
 
-        <p className="mt-3 text-base md:text-lg text-gray-600 leading-relaxed">
-          Our services are designed to help you understand complex subjects,<br />
+        <p className=" mt-2 md:mt-3 text-sm md:text-lg  text-gray-600 md:text-center leading-5 md:leading-relaxed">
+          Our services are designed to help you understand complex subjects, 
+           <br className="hidden md:block" />
           develop effective study strategies, and present your work professionally.
         </p>
       </div>
 
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className=" grid grid-cols-0 md:grid-cols-2 lg:grid-cols-3 gap-1 md:gap-8">
           {services.map((service, index) => (
             <ServiceCard 
               key={service.title}
@@ -55,11 +56,14 @@ const ServicesSection: React.FC = () => {
           ))}
         </div>
         
-        <div className="mt-6 text-center">
-          <Button link="/services" variant="primary">
-            View All Services
-          </Button>
-        </div>
+     <div className="mt-6 text-center">
+  <a
+    href="/services"
+    className="inline-block text-sm md:text-base px-3 py-2.5 md:px-6 md:py-3 rounded-xl bg-primary-500 text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+  >
+    View All Services
+  </a>
+</div>
       </div>
     </section>
   );

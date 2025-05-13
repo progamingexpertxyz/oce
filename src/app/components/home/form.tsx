@@ -1,28 +1,50 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
+
+const options = [
+  "Online Course",
+  "Half Online Course",
+  "Only Assignments",
+  "Simulation Help",
+  "Others"
+];
 
 const NursingDiscountForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  const [service, setService] = useState('');
+  const [services, setServices] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
-  const [page] = useState('Nursing Discount Page');
+const [page, setPage] = useState('');
+
+useEffect(() => {
+  if (typeof window !== 'undefined') {
+    setPage(window.location.href);
+  }
+}, [])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     if (name === "name") setName(value);
     if (name === "email") setEmail(value);
     if (name === "phone") setPhone(value);
-    if (name === "service") setService(value);
+  };
+
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.name;
+    setServices((prev) =>
+      prev.includes(value)
+        ? prev.filter((item) => item !== value)
+        : [...prev, value]
+    );
   };
 
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     setLoading(true);
 
-    const formData = { name, email, phone, service, page };
+    const formData = { name, email, phone, services, page };
 
     try {
       const response = await fetch('/api/send', {
@@ -39,11 +61,10 @@ const NursingDiscountForm = () => {
           title: 'Success!',
           text: 'Form submitted successfully.',
         });
-        // Reset form
         setName('');
         setEmail('');
         setPhone('');
-        setService('');
+        setServices([]);
       } else {
         Swal.fire({
           icon: 'error',
@@ -64,7 +85,7 @@ const NursingDiscountForm = () => {
   };
 
   return (
-    <div className="md:w-[360px] bg-white text-black rounded-2xl p-4 shadow-lg md:mr-32 mt-6 md:mt-0">
+    <div className="md:w-[360px] bg-white text-black rounded-2xl p-4 shadow-lg md:mr-32 mt-4 md:mt-0 border border-neutral-200">
       <div className="flex justify-center mb-2">
         <img src="/Oce 1.png" alt="OCE logo" className="p-1 rounded-full border border-white w-24 h-24" />
       </div>
@@ -72,59 +93,51 @@ const NursingDiscountForm = () => {
 
       <form onSubmit={handleSubmit} className="space-y-2">
         <input type="hidden" name="page" value={page} />
-
-        <label htmlFor="name" className="sr-only">Full Name</label>
         <input
-          id="name"
           type="text"
           name="name"
           value={name}
           onChange={handleChange}
           placeholder="Full Name"
           required
-          className="w-full text-sm rounded-full border border-gray-300 bg-gray-50 px-4 py-1.5 focus:outline-none focus:border-pink-500"
+          className="w-full text-sm rounded-full border border-gray-300 bg-gray-50 px-4 py-1.5"
         />
-
-        <label htmlFor="email" className="sr-only">Email</label>
         <input
-          id="email"
           type="email"
           name="email"
           value={email}
           onChange={handleChange}
           placeholder="Email"
           required
-          className="w-full text-sm rounded-full border border-gray-300 bg-gray-50 px-4 py-1.5 focus:outline-none focus:border-pink-500"
+          className="w-full text-sm rounded-full border border-gray-300 bg-gray-50 px-4 py-1.5"
         />
-
-        <label htmlFor="phone" className="sr-only">Phone</label>
         <input
-          id="phone"
           type="tel"
           name="phone"
           value={phone}
           onChange={handleChange}
           placeholder="Phone"
           required
-          className="w-full text-sm rounded-full border border-gray-300 bg-gray-50 px-4 py-1.5 focus:outline-none focus:border-pink-500"
+          className="w-full text-sm rounded-full border border-gray-300 bg-gray-50 px-4 py-1.5"
         />
 
-        <label htmlFor="service" className="sr-only">Select Course</label>
-        <select
-          id="service"
-          name="service"
-          value={service}
-          onChange={handleChange}
-          required
-          className="w-full text-sm rounded-full border border-gray-300 bg-gray-50 px-4 py-1.5 focus:outline-none focus:border-pink-500"
-        >
-          <option value="">Select Course</option>
-          <option value="Online Course">Online Course</option>
-          <option value="Half Online Course">Half Online Course</option>
-          <option value="Only Assignments">Only Assignments</option>
-          <option value="Simulation Help">Simulation Help</option>
-          <option value="Others">Others</option>
-        </select>
+        <div className="pt-1">
+          <p className="text-sm font-semibold mb-1 text-left">Select Services</p>
+          <div className="grid grid-cols-2 gap-2 text-sm">
+            {options.map((option) => (
+              <label key={option} className="flex items-center gap-2 text-left">
+                <input
+                  type="checkbox"
+                  name={option}
+                  checked={services.includes(option)}
+                  onChange={handleCheckboxChange}
+                  className="form-checkbox text-secondary-400"
+                />
+                {option}
+              </label>
+            ))}
+          </div>
+        </div>
 
         <div className="flex justify-center pt-2">
           <button
