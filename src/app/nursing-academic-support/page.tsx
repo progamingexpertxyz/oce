@@ -80,18 +80,18 @@ const NursingAcademicSupportPage: React.FC = () => {
       transition={{ duration: 0.3 }}
     >
      {/* Hero Section */}
-<section className="py-20 mx-h-auto bg-gradient-to-br from-primary-50 via-white to-secondary-50">
+<section className="py-10 mx-h-auto bg-gradient-to-br from-primary-50 via-white to-secondary-50">
   <div className="max-w-screen-xl mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
 
     {/* Left: Text Content */}
-    <div className="md:w-1/2 ml-8 mt-8">
+    <div className="md:w-1/2 ml-7 mt-16">
       <h1 className="mb-2 text-5xl font-bold text-gray-800">
-        Academic Support  & Strategies
+        Academic Support <br/> & Strategies
       </h1>
-      <p className="text-gray-900 text-lg leading-relaxed">
+      <p className="text-gray-900 text-xl ml-2 leading-7">
         Navigate the demands of your nursing program with greater confidence 
-        and effectiveness. Our Nursing Academic Support service provides personalized guidance focused on empowering you with the essential
-        skills and strategies needed to succeed.
+        and effectiveness. Our Nursing Academic Support service provides personalized guidance focused on empowering you with the <br/>
+        essential skills and strategies needed to succeed.
       </p>
     </div>
 
@@ -100,7 +100,7 @@ const NursingAcademicSupportPage: React.FC = () => {
       <img
         src="/k.png"
         alt="Academic Support"
-        className="rounded-xl w-[90%] md:w-[65%] ml-10 object-cover"
+        className="rounded-xl w-[80%] md:w-[65%] ml-2 mt-14 object-cover"
       />
     </div>
 

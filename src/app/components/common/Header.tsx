@@ -109,7 +109,7 @@ const Header: React.FC = () => {
         <AnimatePresence>
   {isMenuOpen && (
     <motion.div 
-      className="fixed top-0 right-0 w-full h-auto z-50 bg-gradient-to-br from-primary-100 via-white to-secondary-100 backdrop-blur-sm md:hidden"
+      className="fixed top-0 right-0 w-full h-auto z-50 bg-white/90 backdrop-blur-sm md:hidden"
       variants={mobileMenuVariants}
       initial="hidden"
       animate="visible"
@@ -117,7 +117,7 @@ const Header: React.FC = () => {
     >
       <div className="flex justify-between items-center p-1 border-b">
         <Link href="/" onClick={closeMenu} className="flex items-center gap-2">
-          <img src="/Oce 1.png" alt="Logo" className="h-16 w-16 object-contain" />
+          <img src="/Oce 1.png" alt="Logo" className="h-16 w-16 ml-36 object-contain" />
         </Link>
         <button 
           className="p-2 text-neutral-700 focus:outline-none"

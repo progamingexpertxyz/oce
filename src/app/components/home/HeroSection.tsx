@@ -59,7 +59,7 @@ const HeroSection = () => {
               <h1 className="text-2xl md:text-3xl lg:text-4xl -mt-5 md:-mt-0 font-semibold leading-tight">
                 Master Your Coursework with Expert Academic Support
               </h1>
-              <p className="text-sm text-neutral-700 ">
+              <p className="text-sm md:text-base text-neutral-700 ">
                 Personalized Tutoring, Academic Strategies, and Proofreading to Help You Learn and Succeed Ethically.
               </p>
               <p className="text-neutral-600 text-xs md:text-base">
