@@ -24,7 +24,7 @@ const ServicesPage: React.FC = () => {
         transition={{ duration: 0.3 }}
       >
        {/* Hero Section */}
-<section className="py-20 h-[60vh] bg-gradient-to-br from-primary-50 via-white to-secondary-50">
+<section className="py-20 mx-h-auto bg-gradient-to-br from-primary-50 via-white to-secondary-50">
   <div className="container-custom flex flex-col md:flex-row items-center gap-10">
     
     {/* Left: Text Content */}

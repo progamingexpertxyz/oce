@@ -80,7 +80,7 @@ const NursingAcademicSupportPage: React.FC = () => {
       transition={{ duration: 0.3 }}
     >
      {/* Hero Section */}
-<section className="py-20 h-[55vh] bg-gradient-to-br from-primary-50 via-white to-secondary-50">
+<section className="py-20 mx-h-auto bg-gradient-to-br from-primary-50 via-white to-secondary-50">
   <div className="max-w-screen-xl mx-auto px-4 flex flex-col md:flex-row items-center gap-10">
 
     {/* Left: Text Content */}
@@ -100,7 +100,7 @@ const NursingAcademicSupportPage: React.FC = () => {
       <img
         src="/k.png"
         alt="Academic Support"
-        className="rounded-xl w-[90%] md:w-[55%] ml-10 object-cover"
+        className="rounded-xl w-[90%] md:w-[65%] ml-10 object-cover"
       />
     </div>
 

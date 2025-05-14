@@ -75,14 +75,14 @@ const BlogPage: React.FC = () => {
         exit={{ opacity: 0 }}
         transition={{ duration: 0.3 }}
       >
-       <section className="w-full h-[50vh]  bg-gradient-to-br from-primary-50 via-white to-secondary-50 ">
-  <div className="container-custom h-full flex flex-col md:flex-row-reverse items-center justify-center gap-6">
+       <section className="w-full mx-h-auto  bg-gradient-to-br from-primary-50 via-white to-secondary-50 ">
+  <div className="container-custom py-8 h-full flex flex-col md:flex-row-reverse items-center justify-center gap-6">
     {/* Right Side Image */}
-    <div className="w-full md:w-1/2 mt-8">
+    <div className="w-full md:w-1/2 mt-9">
       <img
         src="/bg-blog.png"
         alt="Academic Resources"
-        className="w-[60%] h-full mt-10 ml-36 object-cover rounded-lg shadow-lg"
+        className="w-[55%] h-full mt-10 ml-36 object-cover rounded-lg shadow-lg"
       />
     </div>
 

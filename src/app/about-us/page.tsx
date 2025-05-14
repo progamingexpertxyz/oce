@@ -3,7 +3,6 @@ import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import SectionTitle from '@/app/components/ui/SectionTitle';
 import { Award, Book, Users, Shield, Lightbulb } from 'lucide-react';
-import NursingDiscountForm from '../components/home/form';
 import TestimonialsSection from '../components/home/TestimonialsSection';
 
 const AboutPage: React.FC = () => {
@@ -47,27 +46,31 @@ const AboutPage: React.FC = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
     >
-      {/* Hero Section */}
-      <section className="py-20 md:py-28  w-full h-[55vh] bg-gradient-to-br from-primary-50 via-white to-secondary-50">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12   ml-5">
-            <div>
-              <h1 className="mb-2 text-4xl leading-9">
-                About Online Course Experts <br /> Your Partner in Ethical Academic Success</h1>
-              <p className="text-base text-neutral-700 mb-6 leading-5">
-                At Online Course Experts, we believe in the power of genuine learning and academic integrity. Our mission is to provide high-quality, ethical academic support services that empower students to truly understand their coursework, develop essential skills and strategies, and achieve their educational goals with confidence.
-              </p>
-            </div>
-            <div>
-              <img
-                src="/about.png"
-                alt="Academic support team"
-                className="rounded-lg shadow-xl w-[50%] h-auto -mt-1 ml-36"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <section className="py-20 md:py-14 w-full max-h-auto bg-gradient-to-br from-primary-50 via-white to-secondary-50">
+  <div className="max-w-7xl mx-auto px-4 mt-12 ">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center ml-8">
+      {/* Left Column - Text */}
+      <div>
+        <h1 className="mb-4 text-3xl md:text-4xl font-bold leading-snug">
+          About Online Course Experts <br /> Your Partner in Ethical Academic Success
+        </h1>
+        <p className="text-base text-neutral-700 leading-relaxed">
+          At Online Course Experts, we believe in the power of genuine learning and academic integrity. Our mission is to provide high-quality, ethical academic support services that empower students to truly understand their coursework, develop essential skills and strategies, and achieve their educational goals with confidence.
+        </p>
+      </div>
+
+      {/* Right Column - Image */}
+      <div className="flex justify-center  ">
+        <img
+          src="/about.png"
+          alt="Academic support team"
+          className="rounded-lg shadow-xl w-full max-w-sm  md:max-w-sm  "
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
 

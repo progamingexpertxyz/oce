@@ -66,9 +66,9 @@ const faqs = [
       transition={{ duration: 0.3 }}
     >
      {/* Hero Section */}
-<section className="py-20 md:py-28 w-full h-[85vh] bg-gradient-to-br from-primary-50 via-white to-secondary-50">
+<section className="py-20 md:py-12 w-full mx-h-auto bg-gradient-to-br from-primary-50 via-white to-secondary-50">
   <div className="container-custom">
-    <div className="flex flex-col md:flex-row items-center md:items-start gap-10">
+    <div className="flex flex-col md:flex-row mt-16 items-center md:items-start gap-10">
       
       {/* Left: Text Content */}
       <div className="md:w-1/2 ml-5">

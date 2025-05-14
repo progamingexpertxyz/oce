@@ -55,10 +55,10 @@ const HowItWorksPage: React.FC = () => {
       </Head>
 
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.3 }}>
-        <section className="h-[40vh] mt-0 w-full bg-gradient-to-br from-primary-50 via-white to-secondary-50">
-          <div className="container-custom h-full  flex flex-col-reverse md:flex-row items-center justify-between gap-6">
+        <section className="mx-h-auto  w-full bg-gradient-to-br from-primary-50 via-white to-secondary-50">
+          <div className="container-custom h-full   flex flex-col-reverse md:flex-row items-center justify-between gap-6">
             {/* Text Left Side */}
-            <div className="w-full md:w-1/2 text-left ml-4 mt-16">
+            <div className="w-full md:w-1/2 text-left ml-4 mt-18">
               <h1 className="text-3xl md:text-4xl font-bold text-neutral-800 mb-1">
                 How Our Services Work
               </h1>
@@ -72,7 +72,7 @@ const HowItWorksPage: React.FC = () => {
               <img
                 src="/steps.png"
                 alt="How it works"
-                className="w-[60%] max-w-sm md:max-w-md -mt-18 object-contain"
+                className="w-[60%] max-w-sm md:max-w-md -mt-14 object-contain"
               />
             </div>
           </div>

@@ -63,11 +63,14 @@ const Header: React.FC = () => {
             <Link href="/" className={navLinkClass(isActive('/'))}>Home</Link>
             <Link href="/about-us" className={navLinkClass(isActive('/about-us'))}>About Us</Link>
            <div className="relative group">
+            
   <div className={navLinkClass(false) + ' flex items-center gap-1 cursor-pointer'}>
-    <span>Services</span>
-    <span className="text-xs">▼</span>
+    <Link href="/services" className={navLinkClass(isActive('/services'))}>
+      Services
+    </Link>
+    <span className="text-xs -ml-3">▼</span>
   </div>
-  <div className="absolute hidden group-hover:flex flex-col bg-white shadow-md mt-2 rounded-md w-48 z-50">
+  <div className="absolute hidden group-hover:flex flex-col bg-white shadow-md  rounded-md w-48 z-50">
     {servicesList.map((service, index) => (
       <Link
         key={index}
@@ -128,30 +131,43 @@ const Header: React.FC = () => {
       <nav className="flex flex-col py-2 text-center">
         <Link href="/" className={navLinkClass(isActive('/'))} onClick={closeMenu}>Home</Link>
         <Link href="/about-us" className={navLinkClass(isActive('/about-us'))} onClick={closeMenu}>About Us</Link>
+  
+       {/* Services Dropdown */}
+<div className="flex flex-col text-center">
+  <div className="flex items-center justify-center gap-2 px-3 py-2">
+    <Link
+      href="/services"
+      className={navLinkClass(isActive('/services'))}
+      onClick={closeMenu}
+    >
+      Services
+    </Link>
+    <button
+      onClick={() => setIsServicesOpen(prev => !prev)}
+      className="text-neutral-700 -ml-4 text-sm focus:outline-none"
+      aria-label="Toggle Services Dropdown"
+    >
+      {isServicesOpen ? '▲' : '▼'}
+    </button>
+  </div>
 
-        {/* Services Dropdown */}
-        <div className="flex flex-col text-center">
-          <button
-            onClick={() => setIsServicesOpen(prev => !prev)}
-            className="text-center px-3 py-2 text-neutral-700 focus:outline-none"
-          >
-            Services {isServicesOpen ? '▲' : '▼'}
-          </button>
-          {isServicesOpen && (
-            <div className="text-left ml-24 flex flex-col">
-              {servicesList.map((service, index) => (
-                <Link
-                  key={index}
-                  href={service.path}
-                  onClick={closeMenu}
-                  className="py-1 text-sm text-natural-700 hover:text-primary-500"
-                >
-                  {service.name}
-                </Link>
-              ))}
-            </div>
-          )}
-        </div>
+  {isServicesOpen && (
+    <div className="text-center flex flex-col">
+      {servicesList.map((service, index) => (
+        <Link
+          key={index}
+          href={service.path}
+          onClick={closeMenu}
+          className="py-1 text-sm text-neutral-700 hover:text-primary-500"
+        >
+          {service.name}
+        </Link>
+      ))}
+    </div>
+  )}
+</div>
+
+      
 
         <Link href="/how-it-works" className={navLinkClass(isActive('/how-it-works'))} onClick={closeMenu}>How It Works</Link>
         <Link href="/blog" className={navLinkClass(isActive('/blog'))} onClick={closeMenu}>Resources</Link>

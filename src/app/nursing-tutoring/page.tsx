@@ -63,7 +63,7 @@ const NursingTutoringPage: React.FC = () => {
     <>
 <section className="relative py-20 md:py-20  w-full ">
   {/* Gradient Overlay */}
-  <div className="absolute inset-0 w-full h-[75vh]  bg-gradient-to-br from-primary-100 via-white to-secondary-100 opacity-50"></div>
+  <div className="absolute inset-0 w-full mx-h-auto  bg-gradient-to-br from-primary-100 via-white to-secondary-100 opacity-50"></div>
 
   {/* Main Content */}
   <div className="relative container-custom z-10 mt-8 ">
@@ -158,50 +158,43 @@ const NursingTutoringPage: React.FC = () => {
 </section>
 
 
-{/* Benefits Section */}
-<section className="py-20 md:py-8 bg-primary-500">
+
+   {/* Benefits Section */}
+<section className="py-20 md:py-10 bg-primary-500">
   <div className="container mx-auto px-4">
-    
-    {/* Custom Heading */}
-    <div className="max-w-4xl mb-10 mx-auto text-center">
-      <h2 className="text-3xl font-extrabold text-white mb-2">
+
+    {/* Heading */}
+    <div className="max-w-3xl mb-12 mx-auto text-center">
+      <h2 className="text-4xl font-bold text-white mb-3">
         How Our Nursing Tutoring Can Help You
       </h2>
-      <p className="text-base text-gray-100">
-        Our expert tutors focus on these key areas to help you succeed <br />
-        in your nursing education journey.
+      <p className="text-lg text-gray-100 leading-relaxed">
+        Our expert tutors focus on key areas to help you succeed in your nursing journey.
       </p>
     </div>
 
-    {/* Benefits List */}
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-      {benefits.map((benefit, index) => {
-        const isLastOdd =
-          benefits.length % 2 === 1 && index === benefits.length - 1;
-
-        return (
-          <motion.div
-            key={index}
-            className={`flex items-start p-3 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 ${
-              isLastOdd ? 'md:col-span-2 mx-auto max-w-xl' : ''
-            }`}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: index * 0.1 }}
-          >
-            <CheckCircle className="h-5 w-5 text-pink-600 mt-1 mr-3" />
-            <div>
-              <h3 className="text-base font-semibold text-gray-800 mb-0.5">{benefit.title}</h3>
-              <p className="text-sm text-gray-600">{benefit.description}</p>
-            </div>
-          </motion.div>
-        );
-      })}
+    {/* Centered Benefit Boxes */}
+    <div className="flex flex-wrap justify-center gap-6">
+      {benefits.map((benefit, index) => (
+        <motion.div
+          key={index}
+          className="w-full max-w-sm bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition duration-300 flex space-x-4"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: index * 0.1 }}
+        >
+          <CheckCircle className="h-6 w-6 text-pink-600 mt-1" />
+          <div>
+            <h3 className="text-lg font-semibold text-gray-800 mb-1">{benefit.title}</h3>
+            <p className="text-sm text-gray-600">{benefit.description}</p>
+          </div>
+        </motion.div>
+      ))}
     </div>
+
   </div>
 </section>
-
 
 
  {/* Nursing Subjects Section */}
