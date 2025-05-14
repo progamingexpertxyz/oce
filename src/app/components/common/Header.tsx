@@ -62,23 +62,25 @@ const Header: React.FC = () => {
           <div className="flex items-center gap-0">
             <Link href="/" className={navLinkClass(isActive('/'))}>Home</Link>
             <Link href="/about-us" className={navLinkClass(isActive('/about-us'))}>About Us</Link>
-            <div className="relative group">
-              <Link href="/services" className={navLinkClass(false)}>
-                <span className="cursor-pointer">Services</span>
-              </Link>
-              <div className="absolute hidden group-hover:flex flex-col bg-white shadow-md mt-2 rounded-md w-48 z-50">
-                {servicesList.map((service, index) => (
-                  <Link
-                    key={index}
-                    href={service.path}
-                    onClick={closeMenu}
-                    className="px-4 py-2 hover:bg-gray-100 text-neutral-700"
-                  >
-                    {service.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
+           <div className="relative group">
+  <div className={navLinkClass(false) + ' flex items-center gap-1 cursor-pointer'}>
+    <span>Services</span>
+    <span className="text-xs">▼</span>
+  </div>
+  <div className="absolute hidden group-hover:flex flex-col bg-white shadow-md mt-2 rounded-md w-48 z-50">
+    {servicesList.map((service, index) => (
+      <Link
+        key={index}
+        href={service.path}
+        onClick={closeMenu}
+        className="px-4 py-2 hover:bg-gray-100 text-neutral-700"
+      >
+        {service.name}
+      </Link>
+    ))}
+  </div>
+</div>
+
             <Link href="/how-it-works" className={navLinkClass(isActive('/how-it-works'))}>How It Works</Link>
             <Link href="/blog" className={navLinkClass(isActive('/blog'))}>Resources</Link>
           </div>
@@ -101,67 +103,70 @@ const Header: React.FC = () => {
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-        {/* Mobile Menu */}
         <AnimatePresence>
-          {isMenuOpen && (
-            <motion.div 
-              className="fixed inset-0 z-50 bg-white md:hidden"
-              variants={mobileMenuVariants}
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-            >
-              <div className="flex justify-between items-center p-4 border-b">
-                <Link href="/" onClick={closeMenu} className="flex items-center gap-2">
-                  <img src="/Oce 1.png" alt="Logo" className=" h-12 w-12 object-contain" />
-                  <span className="font-ageo font-semibold text-xl text-black">
-            Online Course Experts
-          </span>
-                </Link>
-                <button 
-                  className="p-2 text-neutral-700 focus:outline-none"
-                  onClick={toggleMenu}
-                  aria-label="Close menu"
+  {isMenuOpen && (
+    <motion.div 
+      className="fixed top-0 right-0 w-full h-auto z-50 bg-gradient-to-br from-primary-100 via-white to-secondary-100 backdrop-blur-sm md:hidden"
+      variants={mobileMenuVariants}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+    >
+      <div className="flex justify-between items-center p-1 border-b">
+        <Link href="/" onClick={closeMenu} className="flex items-center gap-2">
+          <img src="/Oce 1.png" alt="Logo" className="h-16 w-16 object-contain" />
+        </Link>
+        <button 
+          className="p-2 text-neutral-700 focus:outline-none"
+          onClick={toggleMenu}
+          aria-label="Close menu"
+        >
+          <X size={24} />
+        </button>
+      </div>
+
+      <nav className="flex flex-col py-2 text-center">
+        <Link href="/" className={navLinkClass(isActive('/'))} onClick={closeMenu}>Home</Link>
+        <Link href="/about-us" className={navLinkClass(isActive('/about-us'))} onClick={closeMenu}>About Us</Link>
+
+        {/* Services Dropdown */}
+        <div className="flex flex-col text-center">
+          <button
+            onClick={() => setIsServicesOpen(prev => !prev)}
+            className="text-center px-3 py-2 text-neutral-700 focus:outline-none"
+          >
+            Services {isServicesOpen ? '▲' : '▼'}
+          </button>
+          {isServicesOpen && (
+            <div className="text-left ml-24 flex flex-col">
+              {servicesList.map((service, index) => (
+                <Link
+                  key={index}
+                  href={service.path}
+                  onClick={closeMenu}
+                  className="py-1 text-sm text-natural-700 hover:text-primary-500"
                 >
-                  <X size={24} />
-                </button>
-              </div>
-
-              <nav className="flex flex-col py-4">
-                <Link href="/" className={navLinkClass(isActive('/'))} onClick={closeMenu}>Home</Link>
-                <Link href="/about-us" className={navLinkClass(isActive('/about-us'))} onClick={closeMenu}>About Us</Link>
-
-                {/* Services Dropdown */}
-                <div className="flex flex-col">
-                  <button
-                    onClick={() => setIsServicesOpen(prev => !prev)}
-                    className="text-left px-3 py-2 text-neutral-700 font-medium focus:outline-none"
-                  >
-                    Services {isServicesOpen ? '▲' : '▼'}
-                  </button>
-                  {isServicesOpen && (
-                    <div className="ml-4 flex flex-col">
-                      {servicesList.map((service, index) => (
-                        <Link
-                          key={index}
-                          href={service.path}
-                          onClick={closeMenu}
-                          className="py-1 text-sm text-neutral-700 hover:text-primary-500"
-                        >
-                          {service.name}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-
-                <Link href="/how-it-works" className={navLinkClass(isActive('/how-it-works'))} onClick={closeMenu}>How It Works</Link>
-                <Link href="/blog" className={navLinkClass(isActive('/blog'))} onClick={closeMenu}>Resources</Link>
-                <Link href="/nursing-academic-support" className="mx-4 mt-4 btn-primary text-center" onClick={closeMenu}>Nursing Academic Support</Link>
-              </nav>
-            </motion.div>
+                  {service.name}
+                </Link>
+              ))}
+            </div>
           )}
-        </AnimatePresence>
+        </div>
+
+        <Link href="/how-it-works" className={navLinkClass(isActive('/how-it-works'))} onClick={closeMenu}>How It Works</Link>
+        <Link href="/blog" className={navLinkClass(isActive('/blog'))} onClick={closeMenu}>Resources</Link>
+      <Link 
+  href="/nursing-academic-support" 
+  className="mx-auto mt-4 -px-2 py-2 bg-primary-500 text-white text-sm text-center rounded-md w-2/5"
+  onClick={closeMenu}
+>
+ Academic Support
+</Link>
+</nav>
+    </motion.div>
+  )}
+</AnimatePresence>
+
       </div>
     </header>
   );

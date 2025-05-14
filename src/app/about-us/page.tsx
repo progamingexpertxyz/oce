@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import SectionTitle from '@/app/components/ui/SectionTitle';
 import { Award, Book, Users, Shield, Lightbulb } from 'lucide-react';
 import NursingDiscountForm from '../components/home/form';
+import TestimonialsSection from '../components/home/TestimonialsSection';
 
 const AboutPage: React.FC = () => {
   useEffect(() => {
@@ -250,36 +251,9 @@ const AboutPage: React.FC = () => {
         </div>
       </section>
 
-
+     <TestimonialsSection />
  
-  <section className="relative py-4 text-white overflow-hidden">
-  {/* Background Image */}
-  <div
-    className="absolute inset-0 z-0 bg-fixed bg-cover bg-center"
-    style={{ backgroundImage: "url('/bg.jpg')", opacity: 0.35 }}
-  ></div>
 
-  {/* Gradient Overlay */}
-  <div className="absolute inset-0 bg-gradient-to-tr from-pink-600 to-blue-100 opacity-30 z-0"></div>
-
-  {/* Foreground Content */}
-  <div className="relative z-10 container-custom mx-auto px-4 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
-    {/* Left Text Block */}
-    <div className="md:w-1/2 mt-6 md:mt-0 md:ml-20">
-      <h2 className="text-5xl font-semibold mb-1 text-black">
-        Get Started Today
-      </h2>
-      <p className="text-xl text-black/90 leading-6 mb-4 ml-2">
-        Join the many students who have already <br/> found success with our expert support.
-      </p>
-    </div>
-
-    {/* Right Form */}
-    <div >
-      <NursingDiscountForm />
-    </div>
-  </div>
-</section>
   </motion.div>
   );
 };
