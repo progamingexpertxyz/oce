@@ -53,7 +53,7 @@ const ServicesPage: React.FC = () => {
               <img
                 src="/bg3.jpg"
                 alt="Academic Support"
-                className="rounded-xl w-full ml-1.5 md:ml-0 mt-18 md:mt-12  md:w-[60%] object-cover"
+                className="rounded-xl w-full ml-1.5 md:ml-0 mt-18 md:mt-12  md:w-[70%] object-cover"
               />
             </div>
           </div>
@@ -138,7 +138,7 @@ const ServicesPage: React.FC = () => {
           alt="Nursing student receiving academic support"
           width={480}
           height={320}
-          className="rounded-lg shadow-lg w-full md:w-[80%] h-auto mt-0 md:mt-10 -ml-1.5 md:ml-18"
+          className="rounded-lg shadow-lg w-full md:w-[80%] h-auto mt-0 md:mt-10 -ml-1.5 md:ml-0"
         />
       </motion.div>
 
