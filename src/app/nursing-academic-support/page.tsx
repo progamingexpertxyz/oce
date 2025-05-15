@@ -98,7 +98,7 @@ const NursingAcademicSupportPage: React.FC = () => {
     {/* Right: Image */}
     <div className="md:w-1/2 flex justify-center">
       <img
-        src="/k.png"
+        src="/K.png"
         alt="Academic Support"
         className="rounded-xl w-[80%] md:w-[65%] ml-2 mt-14 object-cover"
       />
@@ -161,7 +161,7 @@ const NursingAcademicSupportPage: React.FC = () => {
         <div className="absolute inset-0 z-0 bg-fixed bg-cover bg-center" style={{ backgroundImage: "url('/bg.jpg')", opacity: 0.35 }}></div>
         <div className="absolute inset-0 bg-gradient-to-tr from-pink-600 to-blue-100 opacity-30 z-0"></div>
         <div className="relative z-10 container-custom mx-auto px-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          <div className="md:w-1/2 mt-6 md:mt-0 md:ml-32">
+          <div className="md:w-1/2 mt-6 md:mt-0 md:ml-20">
             <h2 className="text-4xl font-semibold mb-3 text-black">Ready to Enhance Your <br /> Nursing School Experience?</h2>
             <p className="text-xl text-black/90 leading-snug">
               Develop the skills and strategies you need to <br /> navigate your nursing program confidently.
