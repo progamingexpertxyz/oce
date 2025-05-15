@@ -98,7 +98,7 @@ const NursingAcademicSupportPage: React.FC = () => {
     {/* Right: Image */}
     <div className="md:w-1/2 flex justify-center">
       <img
-        src="/K.png"
+        src="/K.jpg"
         alt="Academic Support"
         className="rounded-xl w-[80%] md:w-[65%] ml-2 mt-14 object-cover"
       />
