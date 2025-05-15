@@ -85,10 +85,10 @@ const NursingAcademicSupportPage: React.FC = () => {
 
     {/* Left: Text Content */}
     <div className="md:w-1/2 ml-7 mt-16">
-      <h1 className="mb-2 text-5xl font-bold text-gray-800">
-        Academic Support <br/> & Strategies
+      <h1 className="mb-2 text-4xl font-bold text-gray-800">
+        Academic Support & Strategies
       </h1>
-      <p className="text-gray-900 text-xl ml-2 leading-7">
+      <p className="text-gray-900 text-base  leading-7 md:leading-5">
         Navigate the demands of your nursing program with greater confidence 
         and effectiveness. Our Nursing Academic Support service provides personalized guidance focused on empowering you with the <br/>
         essential skills and strategies needed to succeed.
@@ -100,7 +100,7 @@ const NursingAcademicSupportPage: React.FC = () => {
       <img
         src="/K.jpg"
         alt="Academic Support"
-        className="rounded-xl w-[80%] md:w-[65%] ml-2 mt-14 object-cover"
+        className="rounded-xl w-[80%] md:w-[55%] ml-2 mt-14 object-cover"
       />
     </div>
 
