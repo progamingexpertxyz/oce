@@ -113,7 +113,7 @@ const NursingAcademicSupportPage: React.FC = () => {
 
 
       {/* Benefits Section */}
-      <section className="py-10">
+      <section className="py-4 md:py-10">
         <div className="container-custom">
           <h2 className="text-xl md:text-4xl text-center font-semibold text-neutral-800 mb-2 md:mb-8">
   Benefits of Nursing Academic Support
@@ -143,10 +143,10 @@ const NursingAcademicSupportPage: React.FC = () => {
       {/* Skills Section */}
 <section className="py-4 md:py-12">
   <div className="container-custom">
-    <div className="mb-8 relative text-center">
+    <div className="md:mb-8 relative text-center">
      
       {/* Heading text above line */}
-      <h2 className="relative z-10 text-xl md:text-4xl font-semibold text-gray-800">
+      <h2 className="relative z-10 -mt-6 md:mt-0 text-xl md:text-4xl font-semibold text-gray-800">
         Develop Key Skills for Nursing School Success
       </h2>
 
